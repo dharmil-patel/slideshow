@@ -1,6 +1,6 @@
 import { Button, Container, Row, Col, Card } from 'react-bootstrap';
 import { useState } from 'react';
-
+import './Slide.css';
 
 
 function Slide() {
@@ -33,7 +33,7 @@ function Slide() {
         e.preventDefault();
 
         setNextDisplay(true);
-        if(slideIndex === 1){
+        if (slideIndex === 1) {
             setPrevDisplay(false)
         }
 
@@ -43,13 +43,13 @@ function Slide() {
     function nextSlideInfo(e) {
         e.preventDefault();
 
-        if(slideIndex === reactInfo.length - 2){
+        if (slideIndex === reactInfo.length - 2) {
             setNextDisplay(false);
-        }else{       
+        } else {
             setResetDisplay(true);
             setPrevDisplay(true);
         }
-        
+
         setSlideIndex(slideIndex + 1);
     }
 
@@ -58,53 +58,53 @@ function Slide() {
         setSlideIndex(0);
         setResetDisplay(false);
         setPrevDisplay(false);
-        setNextDisplay(true);
+        setNextDisplay (true);
     }
 
     return (
         <>
-            <Row className="justify-content-md-center">
-                <Col xs lg="2">
+            <Row className="justify-content-md-center" style={{marginTop : '3.25rem'}}>
+                <Col className="text-center text-md-right">               
                     <Button variant="primary" size="lg" onClick={prevSlideInfo} disabled={!prevDisplay}>
                         Prev
                     </Button>
                 </Col>
-                <Col xs lg="2">
+                <Col className="text-center text-md-right">
                     <Button variant="primary" size="lg" onClick={resetSlideInfo} disabled={!resetDisplay}>
                         Reset
                     </Button>
                 </Col>
-                <Col xs lg="2">
+                <Col className="text-center text-md-right">
                     <Button variant="primary" size="lg" onClick={nextSlideInfo} disabled={!nextDisplay}>
                         Next
                     </Button>
                 </Col>
             </Row>
             <br />
-            <Card border="primary" 
-            style={{ marginLeft: 'auto', marginRight: 'auto', width: '80%', height: '100%' }} 
-            className="text-center">
+            <Card border="primary"
+                style={{  width: '90%', height: '100%' }}
+                className="text-center mx-auto">
                 <Card.Body>
-                    <Card.Title>{reactInfo[slideIndex].id +'. '+ reactInfo[slideIndex].title}</Card.Title>
+                    <Card.Title>{reactInfo[slideIndex].id + '. ' + reactInfo[slideIndex].title}</Card.Title>
                     <Card.Text>
-                    {reactInfo[slideIndex].about}
-                    <br/><br/>
+                        {reactInfo[slideIndex].about}
+                        <br /><br />
 
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Etiam fermentum ipsum non dolor venenatis, ut bibendum sapien consectetur. 
-                    Pellentesque egestas eros a nunc imperdiet, posuere sodales odio consequat. 
-                    Morbi pellentesque velit vitae commodo accumsan. Aenean varius lacus et nibh malesuada porttitor. 
-                    Curabitur nec lacinia ipsum. Nulla varius ligula tellus, eget luctus sapien pretium sit amet. 
-                    Nam nunc nisl, vehicula ac leo et, fringilla semper mauris. 
-                    <br/>
-                    <br/>
-                    Pellentesque sem diam, fringilla lobortis rutrum vitae, lacinia ut ex. Sed sit amet rutrum elit. 
-                    Nunc vestibulum tincidunt molestie. Vestibulum sed volutpat enim. Aenean imperdiet in ante ac aliquet. 
-                    Mauris pretium quam eleifend risus eleifend, eget rhoncus mauris commodo. 
-                    In porta purus ac felis malesuada ornare. 
-                    Aliquam lobortis ac felis a eleifend. Quisque dapibus porta semper.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Etiam fermentum ipsum non dolor venenatis, ut bibendum sapien consectetur.
+                        Pellentesque egestas eros a nunc imperdiet, posuere sodales odio consequat.
+                        Morbi pellentesque velit vitae commodo accumsan. Aenean varius lacus et nibh malesuada porttitor.
+                        Curabitur nec lacinia ipsum. Nulla varius ligula tellus, eget luctus sapien pretium sit amet.
+                        Nam nunc nisl, vehicula ac leo et, fringilla semper mauris.
+                        <br />
+                        <br />
+                        Pellentesque sem diam, fringilla lobortis rutrum vitae, lacinia ut ex. Sed sit amet rutrum elit.
+                        Nunc vestibulum tincidunt molestie. Vestibulum sed volutpat enim. Aenean imperdiet in ante ac aliquet.
+                        Mauris pretium quam eleifend risus eleifend, eget rhoncus mauris commodo.
+                        In porta purus ac felis malesuada ornare.
+                        Aliquam lobortis ac felis a eleifend. Quisque dapibus porta semper.
 
-                        
+
                     </Card.Text>
                 </Card.Body>
             </Card>

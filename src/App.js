@@ -3,6 +3,7 @@ import './App.css';
 import Header from './Header'
 import Slide from './Slide'
 import { Container } from 'react-bootstrap';
+import Footer from './Footer'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <br />
       <Slide />
+      <Footer/>
     </Container>
 
   );
