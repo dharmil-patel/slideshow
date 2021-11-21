@@ -35,6 +35,7 @@ function Slide() {
         setNextDisplay(true);
         if (slideIndex === 1) {
             setPrevDisplay(false)
+            setResetDisplay(false)
         }
 
         setSlideIndex(slideIndex - 1);
